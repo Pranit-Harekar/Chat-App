@@ -1,70 +1,60 @@
 import React from 'react';
-
-import{
-  View,
-  Text,
+import {
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
 
-import{
-  Actions,
-}from 'react-native-router-flux'
+import { Actions } from 'react-native-router-flux';
 
-class Home extends React.Component{
+export default class Home extends React.Component {
   state = {
     name: '',
   };
-  render(){
+  render() {
     return (
-      <View>
-        <Text style={styles.title}>
-          Enter your name:
+      <View style={styles.container}>
+        <Text style={[styles.label, {marginTop: 40}]}>
+          Enter your name :
         </Text>
         <TextInput
-          style= {styles.nameInput}
-          placeholder = 'Cesur Alemdaroglu'
-          onChangeText={(text)=>{
+          placeholder='John Smith'
+          style={styles.textInput}
+          onChangeText={(text) => {
             this.setState({
               name: text,
             });
           }}
-          value = {this.state.name}
+          value={this.state.name}
         />
-      <TouchableOpacity onPress={() =>{
-        Actions.chat({
-          name: this.state.name
-        });
-        }}>
-            <Text style={styles.buttonText}>
-              Next
-            </Text>
+        <TouchableOpacity
+          onPress={() => {
+            Actions.chat({
+              name: this.state.name,
+            });
+          }}
+        >
+          <Text style={styles.label}>
+            Next
+          </Text>
         </TouchableOpacity>
       </View>
-  );
+    );
   }
 }
 
-var styles = StyleSheet.create({
-  title:{
-    marginTop: 20,
-    marginLeft: 20,
-    fontSize: 20,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
   },
-  nameInput:{
-    padding: 5,
-    height: 30,
-    borderWidth: 1,
-    borderColor: 'black',
-    margin: 20,
-  },
-  buttonText:{
-    marginLeft: 20,
+  label: {
     fontSize: 20,
-    color: 'skyblue',
-    alignItems: 'center'
-  }
+    marginLeft: 15,
+  },
+  textInput: {
+    height: 40,
+    marginLeft: 15,
+  },
 });
-
-export default Home;

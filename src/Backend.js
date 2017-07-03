@@ -1,6 +1,4 @@
-import {
-  firebase,
-}from 'firebase';
+import firebase from 'firebase';
 
 class Backend {
   uid = '';
