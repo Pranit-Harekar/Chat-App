@@ -1,13 +1,5 @@
 # Chat-App
-Simple chat app using react native
-
-## Platform
-
-    "firebase": "^4.1.3",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1",
-    "react-native-gifted-chat": "0.1.4"
-
+Simple chat app using react native and firebase
 
 ## Screenshots 
 <p align="center">
